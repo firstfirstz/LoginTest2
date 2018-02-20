@@ -33,6 +33,11 @@ public class LoginActivity extends AppCompatActivity {
                 nameString = nameEditText.getText().toString().trim();
                 userString = usernameEditText.getText().toString().trim();
                 passString = passwordEditText.getText().toString().trim();
+
+                if ((nameString.length()==0)||(userString.length()==0)||(passString.length()==0)) {
+                    Toast.makeText(getApplicationContext(),"กรุณาใส่ข้อมูลให้ครบทุกช่อง",Toast.LENGTH_LONG).show();
+                }
+
                 // ตรวจสอบการ login
                 if ((userString.equals("admin")) && (passString.equals("1234"))) {
                     Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_LONG).show();
